@@ -12,6 +12,10 @@ set nowrap
 set linebreak
 set nolist
 
+" отменяет автокомментирование строки по нажатию на Enter  
+autocmd FileType * set formatoptions-=r
+
+
 " Сохранение при нажатии комбанации в режиме редактирования
 inoremap lk <esc>
 
@@ -31,10 +35,13 @@ let g:netrw_browse_split = 3 " open file in new nab
 " Подключение плагинов через плагин 'VimPlug'
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/jiangmiao/auto-pairs'
+Plug 'https://github.com/jiangmiao/auto-pairs' " Автозакрытие: [, {, ( и т.д. 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'https://github.com/907th/vim-auto-save'
-Plug 'preservim/nerdtree'
+Plug 'https://github.com/907th/vim-auto-save' " Автосохрание файла при нажатии <ESC> 
+Plug 'preservim/nerdtree' " Файловый менеджер 
+
+" Закоментировать строку при нажатии gcc или выделенный фрагмент при нажатии gc  
+Plug 'tpope/vim-commentary'
 
 " color schemes:
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
@@ -61,6 +68,7 @@ let g:coc_global_extensions = [
   \ '@yaegassy/coc-volar-tools']
 
 
+" Включает поддержку широкого цветового охвата 
 if (empty($TMUX))
   if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -80,4 +88,4 @@ colorscheme github_dark_default
 "colorscheme github_light_colorblind
 "colorscheme github_light_default
 
-let g:auto_save = 1  " enable AutoSave on Vim startp
+let g:auto_save = 1  " enable AutoSave on Vim 
