@@ -13,11 +13,13 @@ set linebreak
 set nolist
 
 " отменяет автокомментирование строки по нажатию на Enter  
-autocmd FileType * set formatoptions-=r
+autocmd FileType * set formatoptions-=ro
 
 
 " Сохранение при нажатии комбанации в режиме редактирования
-inoremap lk <esc>
+
+inoremap lk <esc>:w<CR> 
+
 
 " Переопределение клавиш навигации
 noremap j h
@@ -37,8 +39,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/jiangmiao/auto-pairs' " Автозакрытие: [, {, ( и т.д. 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'https://github.com/907th/vim-auto-save' " Автосохрание файла при нажатии <ESC> 
+" Plug 'https://github.com/907th/vim-auto-save' " Автосохрание файла при нажатии <ESC> 
 Plug 'preservim/nerdtree' " Файловый менеджер 
+
+" Поддержка Vue синтаксиса 
+Plug 'leafOfTree/vim-vue-plugin'
 
 " Закоментировать строку при нажатии gcc или выделенный фрагмент при нажатии gc  
 Plug 'tpope/vim-commentary'
@@ -88,4 +93,11 @@ colorscheme github_dark_default
 "colorscheme github_light_colorblind
 "colorscheme github_light_default
 
-let g:auto_save = 1  " enable AutoSave on Vim 
+" let g:auto_save = 1  " enable AutoSave on Vim 
+
+" Триггер автокомплита 
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" Навигация по автокоплиту 
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
