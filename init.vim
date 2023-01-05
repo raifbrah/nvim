@@ -1,5 +1,5 @@
 set number
-"set relativenumber
+set relativenumber
 set mouse=a
 set tabstop=2
 set softtabstop=2
@@ -18,7 +18,8 @@ autocmd FileType * set formatoptions-=ro
 
 " Сохранение при нажатии комбанации в режиме редактирования
 
-inoremap lk <esc>:w<CR> 
+inoremap lk <esc>
+inoremap kl <esc>:w<CR> 
 
 
 " Переопределение клавиш навигации
@@ -62,15 +63,11 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-tsserver',
   \ 'coc-css',
-  \ 'coc-cssmodules',
-  \ 'coc-git',
-  \ 'coc-glslx',
   \ 'coc-html-css-support',
   \ 'coc-svg',
   \ 'coc-eslint',
   \ 'coc-prettier',
-  \ '@yaegassy/coc-volar',
-  \ '@yaegassy/coc-volar-tools']
+  \ '@yaegassy/coc-volar']
 
 
 " Включает поддержку широкого цветового охвата 
