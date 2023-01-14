@@ -52,6 +52,7 @@ Plug 'tpope/vim-commentary'
 " color schemes:
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'projekt0n/github-nvim-theme'
+Plug 'bluz71/vim-moonfly-colors'
 
 call plug#end()
 
@@ -80,14 +81,16 @@ if (empty($TMUX))
 endif
 
 
-"colorscheme spaceduck
-"colorscheme github_dark
-"colorscheme github_dark_colorblind
-colorscheme github_dark_default
-"colorscheme github_dimmed
-"colorscheme github_light
-"colorscheme github_light_colorblind
-"colorscheme github_light_default
+" colorscheme spaceduck
+" colorscheme github_dark
+" colorscheme github_dark_colorblind
+" colorscheme github_dark_default
+" colorscheme github_dimmed
+" colorscheme github_light
+" colorscheme github_light_colorblind
+" colorscheme github_light_default
+colorscheme moonfly
+
 
 " let g:auto_save = 1  " enable AutoSave on Vim 
 
