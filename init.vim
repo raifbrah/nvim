@@ -17,7 +17,6 @@ autocmd FileType * set formatoptions-=ro
 
 
 " Сохранение при нажатии комбанации в режиме редактирования
-
 inoremap lk <esc>
 inoremap kl <esc>:w<CR> 
 
@@ -40,8 +39,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/jiangmiao/auto-pairs' " Автозакрытие: [, {, ( и т.д. 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'https://github.com/907th/vim-auto-save' " Автосохрание файла при нажатии <ESC> 
-Plug 'preservim/nerdtree' " Файловый менеджер 
 
 " Поддержка Vue синтаксиса 
 Plug 'leafOfTree/vim-vue-plugin'
@@ -100,3 +97,10 @@ inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 " Навигация по автокоплиту 
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+
+" Neovide setups
+if exists("g:neovide")
+  let g:neovide_scale_factor = 0.7
+  let g:neovide_hide_mouse_when_typing = v:true
+endif
