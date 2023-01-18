@@ -8,6 +8,8 @@ set shiftwidth=2
 set autoindent
 set scrolloff=8
 " set noswapfile
+set nobackup
+set nowritebackup
 
 set nowrap
 set linebreak
