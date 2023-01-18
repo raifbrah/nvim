@@ -6,7 +6,8 @@ set softtabstop=2
 set expandtab
 set shiftwidth=2
 set autoindent
-set noswapfile
+set scrolloff=8
+" set noswapfile
 
 set nowrap
 set linebreak
