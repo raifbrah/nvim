@@ -15,14 +15,11 @@ set nowrap
 set linebreak
 set nolist
 
-" отменяет автокомментирование строки по нажатию на Enter  
+" отменяет автокомментирование новых строк
 autocmd FileType * set formatoptions-=ro
 
 
-" Сохранение при нажатии комбанации в режиме редактирования
 inoremap lk <esc>
-inoremap kl <esc>:w<CR> 
-
 
 " Переопределение клавиш навигации
 noremap j h
@@ -92,7 +89,6 @@ endif
 colorscheme moonfly
 
 
-" let g:auto_save = 1  " enable AutoSave on Vim 
 
 " Триггер автокомплита 
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
