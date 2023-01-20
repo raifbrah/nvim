@@ -7,7 +7,7 @@ set expandtab
 set shiftwidth=2
 set autoindent
 set scrolloff=8
-" set noswapfile
+set noswapfile
 set nobackup
 set nowritebackup
 
@@ -41,7 +41,11 @@ Plug 'https://github.com/jiangmiao/auto-pairs' " Автозакрытие: [, {,
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Поддержка Vue синтаксиса 
-Plug 'leafOfTree/vim-vue-plugin'
+" Plug 'leafOfTree/vim-vue-plugin'
+
+" Nvim Treesitter configurations and abstraction layer
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 " Закоментировать строку при нажатии gcc или выделенный фрагмент при нажатии gc  
 Plug 'tpope/vim-commentary'
@@ -66,6 +70,78 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ '@yaegassy/coc-volar']
 
+
+" Treesitter extensions autoinstall
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "c",
+    "lua",
+    "vim",
+    "help",
+    "json",
+    "javascript",
+    "css",
+    "html",
+    "vue"
+  },
+  highlight = { enable = true },
+  indent = { enable = true, disable = { 'python' } },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<c-space>',
+      node_incremental = '<c-space>',
+      scope_incremental = '<c-s>',
+      node_decremental = '<c-backspace>',
+    },
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ['aa'] = '@parameter.outer',
+        ['ia'] = '@parameter.inner',
+        ['af'] = '@function.outer',
+        ['if'] = '@function.inner',
+        ['ac'] = '@class.outer',
+        ['ic'] = '@class.inner',
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        [']m'] = '@function.outer',
+        [']]'] = '@class.outer',
+      },
+      goto_next_end = {
+        [']M'] = '@function.outer',
+        [']['] = '@class.outer',
+      },
+      goto_previous_start = {
+        ['[m'] = '@function.outer',
+        ['[['] = '@class.outer',
+      },
+      goto_previous_end = {
+        ['[M'] = '@function.outer',
+        ['[]'] = '@class.outer',
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ['<leader>a'] = '@parameter.inner',
+      },
+      swap_previous = {
+        ['<leader>A'] = '@parameter.inner',
+      },
+    },
+  },
+}
+EOF
 
 " Включает поддержку широкого цветового охвата 
 if (empty($TMUX))
