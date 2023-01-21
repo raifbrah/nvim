@@ -50,6 +50,9 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 " Закоментировать строку при нажатии gcc или выделенный фрагмент при нажатии gc  
 Plug 'tpope/vim-commentary'
 
+" Indent guides
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 " color schemes:
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'projekt0n/github-nvim-theme'
@@ -141,6 +144,14 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
+
+
+-- Enable `lukas-reineke/indent-blankline.nvim`
+require('indent_blankline').setup {
+  char = '┊',
+  show_trailing_blankline_indent = false,
+}
+
 EOF
 
 " Включает поддержку широкого цветового охвата 
