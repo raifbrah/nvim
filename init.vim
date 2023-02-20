@@ -71,6 +71,7 @@ let g:coc_global_extensions = [
   \ 'coc-html-css-support',
   \ 'coc-svg',
   \ 'coc-prettier',
+  \ 'coc-docker',
   \ '@yaegassy/coc-volar']
 
 
@@ -86,7 +87,8 @@ require'nvim-treesitter.configs'.setup {
     "javascript",
     "css",
     "html",
-    "vue"
+    "vue",
+    "dockerfile"
   },
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -187,6 +189,6 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 " Neovide setups
 if exists("g:neovide")
-  let g:neovide_scale_factor = 0.7
+  let g:neovide_scale_factor = 0.8
   let g:neovide_hide_mouse_when_typing = v:true
 endif
