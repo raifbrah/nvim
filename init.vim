@@ -72,6 +72,7 @@ let g:coc_global_extensions = [
   \ 'coc-svg',
   \ 'coc-prettier',
   \ 'coc-docker',
+  \ 'coc-yaml',
   \ '@yaegassy/coc-volar']
 
 
@@ -88,6 +89,7 @@ require'nvim-treesitter.configs'.setup {
     "css",
     "html",
     "vue",
+    "yaml",
     "dockerfile"
   },
   highlight = { enable = true },
