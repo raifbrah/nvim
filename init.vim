@@ -40,9 +40,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/jiangmiao/auto-pairs' " Автозакрытие: [, {, ( и т.д. 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Поддержка Vue синтаксиса 
-" Plug 'leafOfTree/vim-vue-plugin'
-
 " Nvim Treesitter configurations and abstraction layer
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
