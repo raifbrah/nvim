@@ -176,6 +176,10 @@ endif
 " colorscheme github_light_default
 colorscheme moonfly
 
+" Убераю заливку фона
+highlight Normal guibg=NONE
+highlight NonText guibg=NONE
+
 
 
 " Триггер автокомплита 
