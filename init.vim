@@ -32,6 +32,9 @@ noremap ; l
 let g:netrw_banner = 0 " hide banner above files
 let g:netrw_liststyle = 3 " tree instead of plain view
 let g:netrw_browse_split = 3 " open file in new nab
+let g:netrw_keepdir = 0 " Синхронизация текущего каталога и каталога просмотра. Это поможет избежать ошибки перемещения файлов.
+let g:netrw_winsize = 30 " Размер окна при создании разделения
+" let g:netrw_localcopydircmd = 'cp -r' " Изменяет команду копирования. В основном для включения рекурсивного копирования каталогов.
 
 
 " Подключение плагинов через плагин 'VimPlug'
