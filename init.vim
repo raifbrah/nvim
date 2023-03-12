@@ -169,6 +169,9 @@ endif
 " colorscheme github_light_default
 colorscheme moonfly
 
+" Makes the background fill transparent
+highlight Normal guibg=NONE
+
 
 " Триггер автокомплита 
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
