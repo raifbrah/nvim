@@ -18,14 +18,13 @@ set nolist
 " отменяет автокомментирование новых строк
 autocmd FileType * set formatoptions-=ro
 
-
-inoremap lk <esc>
-
 " Переопределение клавиш навигации
 noremap j h
 noremap k j
 noremap l k
 noremap ; l
+
+inoremap lk <esc>
 
 
 " Netrw file explorer settings
@@ -86,8 +85,6 @@ require'nvim-treesitter.configs'.setup {
     "help",
     "json",
     "javascript",
-    "css",
-    "html",
     "vue",
     "yaml",
     "dockerfile"
@@ -147,13 +144,6 @@ require'nvim-treesitter.configs'.setup {
       },
     },
   },
-}
-
-
--- Enable `lukas-reineke/indent-blankline.nvim`
-require('indent_blankline').setup {
-  char = '┊',
-  show_trailing_blankline_indent = false,
 }
 
 EOF
