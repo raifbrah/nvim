@@ -52,6 +52,9 @@ Plug 'tpope/vim-commentary'
 " Indent guides
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+" Smooth scrolling Neovim plugin written in lua
+Plug 'karb94/neoscroll.nvim'
+
 " color schemes:
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'projekt0n/github-nvim-theme'
@@ -84,6 +87,7 @@ require'nvim-treesitter.configs'.setup {
     "vim",
     "help",
     "json",
+    "css",
     "javascript",
     "vue",
     "yaml",
@@ -147,6 +151,10 @@ require'nvim-treesitter.configs'.setup {
 }
 
 EOF
+
+
+" Neoscroll plugin Quickstart
+lua require('neoscroll').setup()
 
 " Включает поддержку широкого цветового охвата 
 if (empty($TMUX))
