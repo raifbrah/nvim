@@ -33,13 +33,12 @@ let g:netrw_liststyle = 3 " tree instead of plain view
 let g:netrw_browse_split = 3 " open file in new nab
 let g:netrw_keepdir = 0 " Синхронизация текущего каталога и каталога просмотра. Это поможет избежать ошибки перемещения файлов.
 let g:netrw_winsize = 30 " Размер окна при создании разделения
-" let g:netrw_localcopydircmd = 'cp -r' " Изменяет команду копирования. В основном для включения рекурсивного копирования каталогов.
 
 
 " Подключение плагинов через плагин 'VimPlug'
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/jiangmiao/auto-pairs' " Автозакрытие: [, {, ( и т.д. 
+Plug 'jiangmiao/auto-pairs' " Автозакрытие: [, {, ( и т.д. 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Nvim Treesitter configurations and abstraction layer
@@ -54,6 +53,9 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Smooth scrolling Neovim plugin written in lua
 Plug 'karb94/neoscroll.nvim'
+
+" Autocorrect of the closing HTML tag, when changing the openin tag
+Plug 'windwp/nvim-ts-autotag'
 
 " color schemes:
 Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
@@ -152,6 +154,9 @@ require'nvim-treesitter.configs'.setup {
 
 EOF
 
+
+" nvim-ts-autotag setup
+lua require('nvim-ts-autotag').setup()
 
 " Neoscroll plugin Quickstart
 lua require('neoscroll').setup()
