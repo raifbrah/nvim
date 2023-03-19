@@ -90,6 +90,7 @@ require'nvim-treesitter.configs'.setup {
     "help",
     "json",
     "css",
+    "scss",
     "javascript",
     "vue",
     "yaml",
