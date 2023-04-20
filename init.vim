@@ -19,12 +19,13 @@ set nolist
 autocmd FileType * set formatoptions-=ro
 
 " Переопределение клавиш навигации
-noremap j h
-noremap k j
-noremap l k
-noremap ; l
+" noremap j h
+" noremap k j
+" noremap l k
+" noremap ; l
+" inoremap lk <esc>
 
-inoremap lk <esc>
+inoremap kj <esc>
 
 
 " Netrw file explorer settings
