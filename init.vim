@@ -94,6 +94,8 @@ require'nvim-treesitter.configs'.setup {
     "css",
     "scss",
     "javascript",
+    "typescript",
+    "tsx",
     "vue",
     "yaml",
     "dockerfile"
