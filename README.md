@@ -7,12 +7,12 @@
 # Этапы установки
 
 ### Перед установкой конфигурационных файлов, необходимо убедиться что на вашем ПК установлены или установить следующие программы и плагины:
-- <a href="https://git-scm.com/">Git</a> (Для клонирования репозитория)
-- <a href="https://nodejs.org/en/">Node.js</a> (Для работы Neovim и его плагинов)
+- <a href="https://git-scm.com/">Git</a> (для клонирования репозитория)
+- <a href="https://nodejs.org/en/">Node.js</a> (для работы Neovim и его плагинов)
 - <a href="https://gcc.gnu.org/">Компилятор gcc</a> (для работы Treesitter). Обычно на Unix системах он установлен по умолчанию
 - <a href="https://github.com/junegunn/vim-plug">vim-plug</a> (менеджер плагинов Neovim)
 - <a href="https://neovim.io/">Neovim</a> (не ниже 8 версии)
-- <a href="https://github.com/BurntSushi/ripgrep">BurntSushi/ripgrep</a> (Для работы ripgrep в Telescope)
+- <a href="https://github.com/BurntSushi/ripgrep">BurntSushi/ripgrep</a> (для работы ripgrep в Telescope)
 
 ### Установка конфигурационных файлов:
 
