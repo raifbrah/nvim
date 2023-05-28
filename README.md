@@ -12,7 +12,7 @@
 - <a href="https://gcc.gnu.org/">Компилятор gcc</a> (для работы Treesitter). Обычно на Unix системах он установлен по умолчанию
 - <a href="https://github.com/junegunn/vim-plug">vim-plug</a> (менеджер плагинов Neovim)
 - <a href="https://neovim.io/">Neovim</a> (не ниже 8 версии)
-
+- <a href="https://github.com/BurntSushi/ripgrep">BurntSushi/ripgrep</a> (Для работы ripgrep в Telescope)
 
 ### Установка конфигурационных файлов:
 
