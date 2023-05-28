@@ -18,13 +18,6 @@ set nolist
 " отменяет автокомментирование новых строк
 autocmd FileType * set formatoptions-=ro
 
-" Переопределение клавиш навигации
-" noremap j h
-" noremap k j
-" noremap l k
-" noremap ; l
-" inoremap lk <esc>
-
 inoremap kj <esc>
 
 
@@ -48,6 +41,11 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 " Закоментировать строку при нажатии gcc или выделенный фрагмент при нажатии gc  
 Plug 'tpope/vim-commentary'
+
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Indent guides
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -157,6 +155,16 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+EOF
+
+
+" Telescope bindings
+nnoremap ,ff <cmd>Telescope find_files<cr>
+nnoremap ,fg <cmd>Telescope live_grep<cr>
+
+" Telescope fzf plugin
+lua << EOF
+require('telescope').load_extension('fzf')
 EOF
 
 
