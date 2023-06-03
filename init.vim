@@ -18,6 +18,7 @@ set nolist
 " отменяет автокомментирование новых строк
 autocmd FileType * set formatoptions-=ro
 
+let mapleader = " " "Reassigning the <leader> key
 inoremap kj <esc>
 
 
@@ -158,9 +159,9 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 
-" Telescope bindings
-nnoremap ,ff <cmd>Telescope find_files<cr>
-nnoremap ,fg <cmd>Telescope live_grep<cr>
+" Telescope keymaps
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 " Telescope fzf plugin
 lua << EOF
