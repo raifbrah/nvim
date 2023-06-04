@@ -48,6 +48,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
+" Toggleterm
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
 " Indent guides
 Plug 'lukas-reineke/indent-blankline.nvim'
 
@@ -166,6 +169,14 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 " Telescope fzf plugin
 lua << EOF
 require('telescope').load_extension('fzf')
+EOF
+
+"Toggleterm setup
+lua << EOF
+require("toggleterm").setup{
+  open_mapping = [[<c-\>]],
+  direction = 'float',
+}
 EOF
 
 
