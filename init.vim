@@ -51,6 +51,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Toggleterm
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
+" Airline
+Plug 'vim-airline/vim-airline'
+
 " Indent guides
 Plug 'lukas-reineke/indent-blankline.nvim'
 
