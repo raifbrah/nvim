@@ -11,15 +11,15 @@
 - <a href="https://git-scm.com/">Git</a> (для клонирования репозитория)
 - <a href="https://nodejs.org/en/">Node.js</a> (для работы Neovim и его плагинов)
 - <a href="https://gcc.gnu.org/">Компилятор gcc</a> (для работы Treesitter). Обычно на Unix системах он установлен по умолчанию
-- <a href="https://github.com/junegunn/vim-plug">vim-plug</a> (менеджер плагинов Neovim)
 - <a href="https://neovim.io/">Neovim</a> (не ниже 8 версии)
 - <a href="https://github.com/BurntSushi/ripgrep">BurntSushi/ripgrep</a> (для работы ripgrep в Telescope)
 - <a href="https://github.com/jesseduffield/lazygit">Lazygit</a> (Удобнее всего запускать через toogleterm.nvim)
+- <a href="https://github.com/junegunn/vim-plug">vim-plug</a> (менеджер плагинов Neovim)
 
-###### Packages:
+###### Packages installation (for Termux):
 
 ```sh
-sudo apt install -y git gh nodejs-lts build-essential neovim ripgrep
+sudo apt install -y git gh nodejs-lts build-essential neovim ripgrep lazygit
 ```
 
 ###### Vim-plug:
