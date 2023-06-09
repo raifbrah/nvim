@@ -14,6 +14,7 @@
 - <a href="https://github.com/junegunn/vim-plug">vim-plug</a> (менеджер плагинов Neovim)
 - <a href="https://neovim.io/">Neovim</a> (не ниже 8 версии)
 - <a href="https://github.com/BurntSushi/ripgrep">BurntSushi/ripgrep</a> (для работы ripgrep в Telescope)
+- <a href="https://github.com/jesseduffield/lazygit">Lazygit</a> (Удобнее всего запускать через toogleterm.nvim)
 
 ###### Packages:
 
