@@ -170,10 +170,12 @@ EOF
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
-" Telescope fzf plugin
-lua << EOF
-require('telescope').load_extension('fzf')
-EOF
+" Триггер автокомплита coc.nvim
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" Навигация по автокоплиту coc.nvim
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 "Toggleterm setup
 lua << EOF
@@ -197,6 +199,11 @@ end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 EOF
 
+
+" Telescope fzf plugin
+lua << EOF
+require('telescope').load_extension('fzf')
+EOF
 
 " nvim-ts-autotag setup
 lua require('nvim-ts-autotag').setup()
@@ -227,14 +234,6 @@ colorscheme moonfly
 
 " Makes the background fill transparent
 highlight Normal guibg=NONE
-
-
-" Триггер автокомплита 
-inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-
-" Навигация по автокоплиту 
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 
 " Neovide setups
