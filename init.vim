@@ -83,6 +83,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-docker',
   \ 'coc-yaml',
+  \ 'coc-git',
   \ '@yaegassy/coc-volar']
 
 
