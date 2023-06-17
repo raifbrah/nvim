@@ -59,6 +59,7 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 " NerdTree
 Plug 'preservim/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs' " Sync for all tabs
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -176,8 +177,8 @@ EOF
 
 
 " NerdTree keymaps
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <leader>n :NERDTreeToggle<CR>
+nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " Telescope keymaps
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
