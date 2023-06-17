@@ -51,6 +51,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Toggleterm
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
+" NerdTree
+Plug 'preservim/nerdtree'
+
 " Airline
 Plug 'vim-airline/vim-airline'
 
@@ -165,6 +168,10 @@ require'nvim-treesitter.configs'.setup {
 
 EOF
 
+
+" NerdTree key bindings
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Telescope keymaps
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
