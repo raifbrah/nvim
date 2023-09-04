@@ -95,7 +95,6 @@ let g:coc_global_extensions = [
   \ 'coc-docker',
   \ 'coc-yaml',
   \ 'coc-git',
-  \ '@yaegassy/coc-tailwindcss3',
   \ '@yaegassy/coc-volar']
 
 
