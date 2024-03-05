@@ -179,7 +179,7 @@ EOF
 
 " NerdTree keymaps
 " nnoremap <leader>n :NERDTreeToggle<CR>
-nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
+nmap <Leader>e <plug>NERDTreeTabsToggle<CR>
 
 " Telescope keymaps
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -220,7 +220,7 @@ nmap <leader>ac  <Plug>(coc-codeaction-cursor)
 "Toggleterm setup
 lua << EOF
 require("toggleterm").setup{
-  open_mapping = [[<c-\>]],
+  open_mapping = [[<c-j>]],
   direction = 'float',
 }
 EOF
