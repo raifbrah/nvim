@@ -85,6 +85,7 @@ call plug#end()
 "Coc extensions autoinstall
 let g:coc_global_extensions = [
   \ 'coc-json',
+  \ 'coc-angular',
   \ 'coc-emmet',
   \ 'coc-html',
   \ 'coc-tsserver',
@@ -179,7 +180,7 @@ EOF
 
 " NerdTree keymaps
 " nnoremap <leader>n :NERDTreeToggle<CR>
-nmap <Leader>e <plug>NERDTreeTabsToggle<CR>
+nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " Telescope keymaps
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
