@@ -92,7 +92,6 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-html-css-support',
   \ 'coc-svg',
-  \ 'coc-prettier',
   \ 'coc-docker',
   \ 'coc-yaml',
   \ 'coc-git',

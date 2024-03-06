@@ -1,12 +1,3 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "markdown",
-    "css",
-    "html",
-    "vue"
-  ]
+  "coc.preferences.jumpCommand": "tabe"
 }
