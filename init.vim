@@ -103,6 +103,7 @@ let g:coc_global_extensions = [
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
+    "angular",
     "c",
     "lua",
     "vim",
@@ -180,7 +181,7 @@ EOF
 
 " NerdTree keymaps
 " nnoremap <leader>n :NERDTreeToggle<CR>
-nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
+nmap <Leader>e <plug>NERDTreeTabsToggle<CR>
 
 " Telescope keymaps
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
