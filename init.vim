@@ -112,6 +112,7 @@ require'nvim-treesitter.configs'.setup {
     "vimdoc",
     "query",
     "json",
+    "html",
     "css",
     "scss",
     "javascript",
