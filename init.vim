@@ -50,6 +50,9 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 " Закоментировать строку при нажатии gcc или выделенный фрагмент при нажатии gc  
 Plug 'tpope/vim-commentary'
 
+" Simple session management for Neovim
+Plug 'folke/persistence.nvim'
+
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
@@ -228,6 +231,20 @@ require("toggleterm").setup{
   open_mapping = [[<c-\>]],
   direction = 'float',
 }
+EOF
+
+
+" Persistence
+lua << EOF
+require("persistence").setup()
+-- restore the session for the current directory
+vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
+
+-- restore the last session
+vim.api.nvim_set_keymap("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<cr>]], {})
+
+-- stop Persistence => session won't be saved on exit
+vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], {})
 EOF
 
 
