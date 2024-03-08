@@ -61,6 +61,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Toggleterm
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
+" Lazygit
+Plug 'kdheepak/lazygit.nvim'
+
 " NerdTree
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs' " Sync for all tabs
@@ -229,6 +232,10 @@ require("toggleterm").setup{
   direction = 'float',
 }
 EOF
+
+
+" Lazygit setup mapping to call :LazyGit
+nnoremap <silent> <leader>gg :LazyGit<CR> 
 
 
 " Persistence setup
