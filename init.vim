@@ -47,9 +47,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-" 💾 Simple session management for Neovim
-Plug 'folke/persistence.nvim'
-
 " Закоментировать строку при нажатии gcc или выделенный фрагмент при нажатии gc  
 Plug 'tpope/vim-commentary'
 
@@ -236,20 +233,6 @@ EOF
 
 " Lazygit setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR> 
-
-
-" Persistence setup
-lua << EOF
-require('persistence').setup()
--- restore the session for the current directory
-vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
-
--- restore the last session
-vim.api.nvim_set_keymap("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<cr>]], {})
-
--- stop Persistence => session won't be saved on exit
-vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], {})
-EOF
 
 
 " Telescope fzf plugin
