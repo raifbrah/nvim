@@ -257,11 +257,12 @@ lua << EOF
 require('telescope').load_extension('fzf')
 EOF
 
+" Autopairs setup
 lua << EOF
 require("nvim-autopairs").setup {}
 EOF
 
-" nvim-treesitter-autotag setup
+" nvim-ts-autotag setup
 lua require('nvim-ts-autotag').setup()
 
 " Neoscroll plugin Quickstart
