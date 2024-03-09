@@ -44,6 +44,10 @@ lua vim.g.loaded_netrw = 1
 lua vim.g.loaded_netrwPlugin = 1
 
 
+" nvim-tree key shortcut to open
+nmap <leader>n :NvimTreeToggle<CR>
+
+
 " Подключение плагинов через плагин 'VimPlug'
 call plug#begin('~/.vim/plugged')
 
