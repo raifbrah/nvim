@@ -44,9 +44,6 @@ lua vim.g.loaded_netrw = 1
 lua vim.g.loaded_netrwPlugin = 1
 
 
-" nvim-tree key shortcut to open
-nmap <leader>n :NvimTreeToggle<CR>
-
 
 " Подключение плагинов через плагин 'VimPlug'
 call plug#begin('~/.vim/plugged')
@@ -195,6 +192,8 @@ EOF
 
 " nvim-tree setup
 lua require("nvim-tree").setup()
+" nvim-tree key shortcut to open
+nmap <silent> <leader>n :NvimTreeToggle<CR>
 
 " Telescope keymaps
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
