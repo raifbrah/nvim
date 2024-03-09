@@ -16,6 +16,9 @@ set nowrap
 set linebreak
 set nolist
 
+" Включает поддержку широкого цветового охвата
+lua vim.opt.termguicolors = true
+
 " отменяет автокомментирование новых строк
 autocmd FileType * set formatoptions-=ro
 
@@ -36,6 +39,10 @@ let g:netrw_browse_split = 3 " open file in new nab
 let g:netrw_keepdir = 0 " Синхронизация текущего каталога и каталога просмотра. Это поможет избежать ошибки перемещения файлов.
 let g:netrw_winsize = 30 " Размер окна при создании разделения
 
+" Netrw disabled
+lua vim.g.loaded_netrw = 1
+lua vim.g.loaded_netrwPlugin = 1
+
 
 " Подключение плагинов через плагин 'VimPlug'
 call plug#begin('~/.vim/plugged')
@@ -43,15 +50,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'windwp/nvim-autopairs' " Автозакрытие: [, {, ( и т.д. 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" A file explorer tree for neovim written in lua
+Plug 'nvim-tree/nvim-tree.lua'
+
 " Nvim Treesitter configurations and abstraction layer
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 " Закоментировать строку при нажатии gcc или выделенный фрагмент при нажатии gc  
 Plug 'tpope/vim-commentary'
-
-" Simple session management for Neovim
-Plug 'folke/persistence.nvim'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -63,10 +70,6 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 " Lazygit
 Plug 'kdheepak/lazygit.nvim'
-
-" NerdTree
-Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs' " Sync for all tabs
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -185,9 +188,9 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 
-" NerdTree keymaps
-" nnoremap <leader>n :NERDTreeToggle<CR>
-nmap <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+" nvim-tree setup
+lua require("nvim-tree").setup()
 
 " Telescope keymaps
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -206,6 +209,7 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
+
 " Use K to show documentation in preview window
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
@@ -216,6 +220,7 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
+
 
 " Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
@@ -231,20 +236,6 @@ require("toggleterm").setup{
   open_mapping = [[<c-\>]],
   direction = 'float',
 }
-EOF
-
-
-" Persistence
-lua << EOF
-require("persistence").setup()
--- restore the session for the current directory
-vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
-
--- restore the last session
-vim.api.nvim_set_keymap("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<cr>]], {})
-
--- stop Persistence => session won't be saved on exit
-vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], {})
 EOF
 
 
@@ -267,16 +258,6 @@ lua require('nvim-ts-autotag').setup()
 
 " Neoscroll plugin Quickstart
 lua require('neoscroll').setup()
-
-" Включает поддержку широкого цветового охвата 
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
 
 
 " colorscheme spaceduck
