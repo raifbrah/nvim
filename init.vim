@@ -103,6 +103,7 @@ let g:coc_global_extensions = [
   \ 'coc-svg',
   \ 'coc-docker',
   \ 'coc-yaml',
+  \ 'coc-vimlsp',
   \ 'coc-git',
   \ '@yaegassy/coc-volar']
 
