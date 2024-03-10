@@ -73,8 +73,8 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 " Lazygit
 Plug 'kdheepak/lazygit.nvim'
 
-" Airline
-Plug 'vim-airline/vim-airline'
+" Lualine
+Plug 'nvim-lualine/lualine.nvim'
 
 " Indent guides
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -198,7 +198,6 @@ nmap <silent> <leader>n :NvimTreeToggle<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
-
 " COC NVIM SETTINGS:START
 " Триггер автокомплита coc.nvim
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
@@ -239,6 +238,9 @@ require("toggleterm").setup{
   direction = 'float',
 }
 EOF
+
+" Lualine setup
+lua require('lualine').setup()
 
 
 " Lazygit setup mapping to call :LazyGit
