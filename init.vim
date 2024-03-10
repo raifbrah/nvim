@@ -16,6 +16,10 @@ set nowrap
 set linebreak
 set nolist
 
+" Поиск без учета регистра или с учетом регистра если присутствует заглавная буква
+set ignorecase
+set smartcase
+
 " отменяет автокомментирование новых строк
 autocmd FileType * set formatoptions-=ro
 
