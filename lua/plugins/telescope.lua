@@ -11,10 +11,20 @@ return {
       }
     })
 
+    local wk = require("which-key")
     local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-    vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+    wk.register({
+      ["<leader>"] = {
+        name = "+file",
+        s = {
+          name = "+Telescope",
+          f = { builtin.find_files, 'Find files' },
+          g = { builtin.live_grep, 'Find grep' },
+          b = { builtin.buffers, 'Find buffers' },
+          h = { builtin.help_tags, 'Find help tags' },
+        },
+      },
+    })
   end
 }
