@@ -1,0 +1,11 @@
+{
+  "languageserver": {
+    "lua": {
+      "command": "lua-language-server",
+      "filetypes": ["lua"],
+      "rootPatterns": [".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git"]
+    }
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "explorer.icon.enableNerdfont": true
+}
