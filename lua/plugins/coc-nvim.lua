@@ -21,6 +21,34 @@ return {
     }
 
 
+    local wk = require("which-key")
+
+    wk.register({
+      -- GoTo code navigation
+      g = {
+        d = {'<Plug>(coc-definition)', '[D]efinition'},
+        y = {'<Plug>(coc-type-definition)', 'T[Y]pe definition'},
+        i = {'<Plug>(coc-implementation)', '[I]mplementation'},
+        r = {'<Plug>(coc-references)', '[R]eferences'},
+      },
+
+      ['<leader>'] = {
+        -- Explorer
+        e = { '<cmd>CocCommand explorer<CR>', 'File [E]xplorer' },
+      }
+    }, {mode = 'n'})
+
+    -- Translate 2
+    wk.register({
+      ['<leader>'] = {
+        d = {
+          name = '+Translate',
+          l = {'<Plug>(coc-translate-selected)', 'Translate Selected'}
+        }
+      }
+    }, {mode = 'x'})
+
+
     -- https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.lua
 
     -- Some servers have issues with backup files, see #649
@@ -64,13 +92,6 @@ return {
     -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
     keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
     keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
-
-    -- GoTo code navigation
-    keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
-    keyset("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
-    keyset("n", "gi", "<Plug>(coc-implementation)", {silent = true})
-    keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
-
 
     -- Use K to show documentation in preview window
     function _G.show_docs()
