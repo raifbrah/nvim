@@ -8,12 +8,7 @@ wk.register({
   ["<leader>"] = {
     name = "+file",
 
-    q = {
-      name = '+Quit',
-      q = { ':q<CR>', '[Q]uit',  },
-      w = { ':wq<CR>', 'Quit [W]ith Save',  },
-      a = { ':qa<CR>', 'Quit [A]ll',  },
-    },
+    q = { ':q<CR>', '[Q]uit',  },
 
     w = { ':w<CR>', 'Save' },
     h = { ':nohlsearch<CR>', 'No[H]l Search' },
