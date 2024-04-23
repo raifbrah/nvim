@@ -10,11 +10,14 @@ return {
       'coc-prettier',
       'coc-angular',
       'coc-eslint',
+      'coc-vimlsp',
       'coc-emmet',
       'coc-json',
+      'coc-toml',
       'coc-html',
       'coc-css',
       'coc-git',
+      'coc-sh',
     }
 
     -- https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.lua
