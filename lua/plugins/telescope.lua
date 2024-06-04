@@ -1,19 +1,25 @@
 return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
   config = function()
+
     require("telescope").setup({
-      pickers = {
-        find_files = {
-          theme = "dropdown"
-        }
+      defaults = {
+        layout_strategy = "vertical",
+        layout_config = {
+          height = 0.99,
+          width = 0.99,
+          preview_cutoff = 0,
+          preview_height = 0.4,
+        },
       }
     })
 
     local builtin = require('telescope.builtin')
     local wk = require("which-key")
-
     wk.register({
       ["<leader>"] = {
         name = "+file",
@@ -26,5 +32,6 @@ return {
         },
       },
     })
+
   end
 }
