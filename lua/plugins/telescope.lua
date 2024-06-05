@@ -13,7 +13,7 @@ return {
           height = 0.99,
           width = 0.99,
           preview_cutoff = 0,
-          preview_height = 0.4,
+          preview_height = 0.35,
         },
       }
     })
